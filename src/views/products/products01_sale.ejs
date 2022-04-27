@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<%-include('../partials/head.ejs')%> 
+    <!-- include one or more optional Cycle2 plugins -->
+
+
+        <style>
+            .body{background: rgba(0, 0, 0, 0.459);
+            background-image: url('https://i.ibb.co/mv4xY2k/bg01.jpg');
+            background-repeat: repeat;
+            }
+   
+            .apaBrand {
+                font-family: 'Josefin Sans', sans-serif;
+                font-weight: 700;
+                font-size: 2.7rem;
+                color: #E70C8F;
+            }
+   
+            .apaLink {
+                font-family: 'Josefin Sans', sans-serif;
+                font-weight: 400;
+                font-size: 1.7rem;
+                color: #E70C8F;
+            }
+   
+            .nLink {
+                font-family: 'Josefin Sans', sans-serif;
+                font-weight: 400;
+                font-size: 1.3rem;
+                color: #060004;
+            }
+   
+            .nlink a:link {
+                color: black;
+            }
+   
+            .nlink a:hover {
+                color: rgb(252, 167, 252);
+            }
+   
+            .menu-expand {
+                padding-left: 4rem;
+                padding-bottom: 1rem;
+                margin: 2px solid transparent;
+                border-radius: 15px;
+            }
+   
+            .menu-expand li:hover {
+                background: rgb(252, 167, 252);
+            }
+   
+            .hero {
+                display: block;
+                position: relative;
+                color: whitesmoke;
+                background-color: #160351;
+                background-image: url('https://i.ibb.co/mv4xY2k/bg01.jpg');
+                border-radius: 15px;
+                align-content: center;
+                text-align: center;
+                height: 50%;
+                width: 100vw;
+                margin-top: 90px;
+            }
+   
+            .news__title {
+                font-family: 'Amaranth', sans-serif;
+                line-height: 8rem;
+                font-size: 4rem;
+            }
+   
+            .news__link::after {
+                content: "";
+                width: 130%;
+                height: 8remp;
+                position: relative;
+                top: 0;
+                left: 0;
+            }
+   
+            .apa-name {
+                font-family: "Josefin Sans", sans-serif;
+                font-weight: 700;
+                color: #e70c8f;
+            }
+   
+            .image {
+                display: inline-block;
+                position: relative;
+                max-width: 340px;
+                width: 70%;
+                max-height: 500px;
+                height: auto;
+                image-rendering: auto;
+            }
+   
+            .herod {
+                background-image: linear-gradient(120deg, #ec008c, #fc6767 100%);
+                background-size: 100% 0.2em;
+                background-position: 0 90%;
+                transition: 0.25s ease-in;
+                margin-bottom: 3%;
+            }
+   
+            .hero-d:hover {
+                background-size: 100% 88% !important;
+            }
+   
+            @import url('https://fonts.googleapis.com/css?family=Amaranth:700,400&display=swap');
+            /* The component will reset browser's styles of link */
+   
+            .r-link {
+                --uirLinkDisplay: var(--rLinkDisplay, inline-block);
+                --uirLinkTextColor: var(--rLinkTextColor);
+                --uirLinkTextDecoration: var(--rLinkTextDecoration, none);
+                display: var(--uirLinkDisplay) !important;
+                color: var(--uirLinkTextColor) !important;
+                text-decoration: var(--uirLinkTextDecoration) !important;
+            }
+            /* The component will reset browser's styles of titles */
+   
+            .r-title {
+                --uirTitleMarginTop: var(--rTitleMarginTop, 0);
+                --uirTitleMarginBottom: var(--rTitleMarginBottom, 0);
+                margin-top: var(--uirTitleMarginTop) !important;
+                margin-bottom: var(--uirTitleMarginBottom) !important;
+            }
+            /*
+        =====
+        CORE STYLES
+        =====
+        */
+   
+            .animated-underline {
+                --uiAnimatedUnderlineWidth: var(--animatedUnderlineWidth, 100%);
+                --uiAnimatedUnderlineHeight: var(--animatedUnderlineHeight, 2px);
+                --uiAnimatedUnderlineBgColor: var(--animatedUnderlineBgColor, currentColor);
+                --uiAnimatedUnderlinePositionX: var(--animatedUnderlinePositionX, left);
+                --uiAnimatedUnderlinePositionY: var(--animatedUnderlinePositionY, bottom);
+                /*
+                1. For multi-line animated underline the "inline" value for the display property is compulsory.
+                2. Adds opportunity to create multi-line padding
+            */
+                --rLinkDisplay: inline;
+                /* 1 */
+                background-image: linear-gradient(0, var(--uiAnimatedUnderlineBgColor) 0, var(--uiAnimatedUnderlineBgColor));
+                background-size: var(--uiAnimatedUnderlineWidth) var(--uiAnimatedUnderlineHeight);
+                background-position: var(--uiAnimatedUnderlinePositionX) var(--uiAnimatedUnderlinePositionY);
+                background-repeat: no-repeat;
+                -webkit-box-decoration-break: clone;
+                /* 2 */
+                box-decoration-break: clone;
+                /* 2 */
+                will-change: background-size;
+                transition: background-size .25s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+            }
+   
+            :root {
+                --animatedUnderlineHeight: 1rem;
+                --animatedUnderlineBgColor: var(--accentColor);
+            }
+   
+            .animated-underline_type1 {
+                --animatedUnderlineWidth: 100%;
+            }
+   
+            .animated-underline_type1:hover {
+                --animatedUnderlineHeight: 100%;
+            }
+   
+            .animated-underline_type2 {
+                --animatedUnderlineWidth: 100%;
+            }
+   
+            .animated-underline_type2:hover {
+                --animatedUnderlineWidth: 0;
+            }
+   
+            .animated-underline_type3 {
+                --animatedUnderlineHeight: 0;
+            }
+   
+            .animated-underline_type3:hover {
+                --animatedUnderlineHeight: 100%;
+            }
+   
+            .animated-underline_type4 {
+                --animatedUnderlineWidth: 0;
+            }
+   
+            .animated-underline_type4:hover {
+                --animatedUnderlineWidth: 100%;
+            }
+   
+            .animated-underline_type5 {
+                --animatedUnderlineWidth: 100%;
+                --animatedUnderlineHeight: 5px;
+                --animatedUnderlinePositionY: 90%;
+            }
+   
+            .animated-underline_type5:hover {
+                --animatedUnderlineHeight: 1rem;
+            }
+            /*
+        =====
+        DEMO
+        =====
+        */
+   
+            :root {
+                --mainColor: #673AB7;
+                --accentColor: #fc0c6c;
+                --accentColorDark: #f15493;
+                --blackColor: #222;
+                --whiteColor: #fff;
+                --rLinkTextColor: --whiteColor: #fff;
+            }
+   
+            .page {
+                color: #fff;
+                width: 100vw;
+                margin: auto;
+                padding-top: 10%;
+                text-align: center;
+            }
+   
+            .news__title {
+                font-color: color: #fff;
+                font-family: 'Amaranth', sans-serif;
+                line-height: 8rem;
+                font-size: 4rem;
+                font-weight: 700px;
+            }
+   
+            .news__link::after {
+                content: "";
+                width: 130%;
+                height: 8rem;
+                position: relative;
+                top: 0;
+                left: 0;
+                color: #fff;
+            }
+   
+            .main {
+                background-color: rgb(16, 24, 51);
+                margin-top: 3%
+            }
+            /*
+        // No media query necessary for xs breakpoint as it's effectively `@media (min-width: 0) { ... }`
+        @include media-breakpoint-up(sm) { ... }
+        @include media-breakpoint-up(md) { ... }
+        @include media-breakpoint-up(lg) { ... }
+        @include media-breakpoint-up(xl) { ... }
+        @include media-breakpoint-up(xxl) { ... }
+   
+        // Usage
+   
+        // Example: Hide starting at `min-width: 0`, and then show at the `sm` breakpoint
+        .custom-class {
+        display: none;
+        }
+        @include media-breakpoint-up(sm) {
+        .custom-class {
+          display: block;
+        }
+        }*/
+            /* -------------------------FOOTER---------------- */
+   
+            @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500&display=swap');
+            .apaBrand-bottom {
+                display: block;
+                color: #E70C8F;
+                font-family: 'Josefin Sans', sans-serif;
+                font-weight: 700;
+                font-size: 2.7rem;
+            }
+   
+            .bg-custom {
+                background-color: #bd0172;
+                width: 100vw;
+                heightt: 50px;
+                align-content: center;
+            }
+            @import url(https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700);
+   
+            body {
+                font-family: 'Roboto Slab', serif;
+                font-weight: 300;
+                font-size: 16px;
+                line-height: 1.4em;
+                color: #333;
+                background: #eee;
+                background-image: url(https://subtlepatterns.com/patterns/gplaypattern.png);
+                background-position: center center;
+            }
+   
+            h1 {
+                margin: 0.5em 0 1em 0;
+                font-size: 1.8em;
+                font-weight: 700;
+                color: #096AA3;
+            }
+   
+            h2{
+                font-weight: bold;
+            }
+   
+            p {
+                margin-bottom: 1em;
+            }
+   
+            .animation {
+                -webkit-transition: all 0.3s ease;
+                -moz-transition: all 0.3s ease;
+                -ms-transition: all 0.3s ease;
+                -o-transition: all 0.3s ease;
+                transition: all 0.3s ease;
+            }
+            .pageTitle sup
+            {
+                font-size: .6em;
+                color: #333;
+            }
+            .well {
+                padding: 3%;
+                margin: 20px auto;
+                border:none;
+                text-align: center;
+            }
+            .well p
+            {
+                font-weight: 300;
+            }
+            .content p
+            {
+                font-weight: 300;
+            }
+            .cardContainer
+            {
+   
+                -webkit-transition: all .3s ease;
+                -moz-transition: all .3s ease;
+                -ms-transition: all .3s ease;
+                transition: all .3s ease;
+   
+   
+                /*depth of the elements */
+                -webkit-perspective: 800px;
+                -moz-perspective: 800px;
+                -o-perspective: 800px;
+                perspective: 800px;
+   
+                /*border: 1px solid #ff0000;*/
+                padding-left: 1%;
+            }
+            .secondRow
+            {
+                margin-top: -1.4%
+            }
+   
+            .card
+            {
+                width: 99%;
+                height: 200px;
+                cursor: pointer;
+   
+                /*transition effects */
+                -webkit-transition: -webkit-transform 0.6s;
+                -moz-transition: -moz-transform 0.6s;
+                -o-transition: -o-transform 0.6s;
+                transition: transform 0.6s;
+                -webkit-transform-style: preserve-3d;
+                -moz-transform-style: preserve-3d;
+                -o-transform-style: preserve-3d;
+                transform-style: preserve-3d;
+            }
+   
+            .card.flipped
+            {
+                -webkit-transform: rotateY( 180deg );
+                -moz-transform: rotateY( 180deg );
+                -o-transform: rotateY( 180deg );
+                transform: rotateY( 180deg );
+            }
+            .card.flipped:
+            {
+            }
+   
+            .card .front,
+            .card .back {
+                display: block;
+                height: 100%;
+                width: 100%;
+                line-height: 60px;
+                color: white;
+                text-align: center;
+                font-size: 4em;
+                position: absolute;
+                -webkit-backface-visibility: hidden;
+                -moz-backface-visibility: hidden;
+                -o-backface-visibility: hidden;
+                backface-visibility: hidden;
+                box-shadow: 3px 5px 20px 2px rgba(0, 0, 0, 0.25);
+                -webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16), 0 2px 5px rgba(0, 0, 0, 0.26);
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16), 0 2px 5px rgba(0, 0, 0, 0.26);
+            }
+   
+            .card .back {
+                width: 100%;
+                padding-left: 3%;
+                padding-right: 3%;
+                font-size: 16px;
+                text-align: left;
+                line-height: 25px;
+            }
+   
+            .card .back {
+                background: #03446A;
+                -webkit-transform: rotateY( 180deg );
+                -moz-transform: rotateY( 180deg );
+                -o-transform: rotateY( 180deg );
+                transform: rotateY( 180deg );
+            }
+   
+            /*Colors for front and back applied here*/
+            .cardContainer:first-child .card .front {
+                background: #2aa9e0;
+            }
+   
+            .cardContainer:first-child .card .back {
+                background: #2aa9e0;
+            }
+   
+            .cardContainer:nth-child(2) .card .front {
+                background: #f39c12;
+            }
+            .cardContainer:nth-child(2) .card .back {
+                background: #f39c12;
+            }
+   
+            .cardContainer:nth-child(3) .card .front {
+                background: #27ae60;
+            }
+            .cardContainer:nth-child(3) .card .back {
+                background: #27ae60;
+            }
+   
+            .cardContainer:nth-child(4) .card .front
+            {
+                background: #AD103C;
+            }
+            .cardContainer:nth-child(4) .card .back
+            {
+                background: #AD103C;
+            }
+   
+   
+   
+            h3.cardTitle {
+                line-height: 1.2em;
+                margin-top: 8%;
+                font-weight: 600;
+            }
+            .content h3.cardTitle
+            {
+                margin-top: 0%;
+            }
+   
+            .content {
+                padding: 4%;
+                font-weight: 100;
+                text-align: left;
+                font-weight: bold;
+            }
+   
+            @media all and (max-width: 1000px){
+                h3.cardTitle{
+                    font-weight: 500;
+   
+                }
+                .content p
+                {
+                    margin-top: -15%;
+                    line-height: 1.2em;
+                }
+   
+                .card
+                {
+                    height:175px;
+                }
+   
+            }
+            @media all and (max-width : 752px) {
+   
+                .secondRow
+                {
+                    margin-top: -3%;
+                }
+                .cardContainer:nth-child(3),.cardContainer:nth-child(4)
+                {
+                    margin-top: 3%;
+                }
+   
+            }
+            @media all and (max-width : 390px) {
+   
+                .card
+                {
+                    width:100%;
+                    height:150px;
+                }
+                .secondRow
+                {
+                    margin-top: -9%;
+                }
+                .well
+                {
+                    padding: 1%;
+                }
+                .cardContainer:nth-child(3),.cardContainer:nth-child(4)
+                {
+                    margin-top: 5%;
+                }
+                h3.cardTitle
+                {
+                    font-weight: 500;
+                }
+                .content p
+                {
+                    margin-top: -20%;
+                    line-height: 1.2em;
+                }
+                .cardWrapper
+                {
+                    margin-left: 4%;
+                }
+   
+            }
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+   
+            .container {
+                width: 100%;
+                height: 100vh;
+                background-color: #ddd;
+            }
+   
+            .cards-wrapper {
+                width: 90%;
+                margin: auto;
+                height: 100%;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+            }
+   
+            .card {
+                width: 300px;
+                background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)),
+                url(images/bg.jpg) center no-repeat;
+                background-size: cover;
+                color: #fff;
+                text-align: center;
+                border-radius: 10px;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+                transition: all 0.4s;
+            }
+   
+            .card:hover {
+                transform: scale(1.1);
+                box-shadow: 0 15px 60px rgba(0, 0, 0, 0.8);
+            }
+   
+            .card-header {
+                margin-bottom: 40px;
+            }
+   
+            .card-header h3 {
+                font-family: "Josefin Sans", sans-serif;
+                font-size: 30px;
+                font-weight: 300;
+                color: chocolate;
+                margin: 30px;
+                border-bottom: 1px groove #fff;
+                padding: 10px;
+            }
+   
+            .card-header h1 {
+                font-family: "Josefin Sans", sans-serif;
+                font-size: 60px;
+                font-weight: 300;
+            }
+   
+            .card-header sup {
+                font-size: 35px;
+            }
+   
+            .card-header span {
+                font-size: 18px;
+            }
+   
+            .card-body {
+                margin-bottom: 60px;
+            }
+   
+            .card-body li {
+                list-style: none;
+                font-family: "Josefin Sans", sans-serif;
+                font-size: 16px;
+                font-weight: 300;
+                margin: 15px 0;
+            }
+   
+            .card-body i {
+                margin-right: 25px;
+            }
+   
+            .card-body .fa-check {
+                color: #0d683a;
+            }
+   
+            .card-body .fa-times {
+                color: #911832;
+            }
+   
+            .card-footer {
+                margin-bottom: 40px;
+            }
+   
+            .card-footer button {
+                width: 120px;
+                padding: 10px;
+                background-color: chocolate;
+                color: #ddd;
+                font-family: "Montserrat", sans-serif;
+                font-size: 12px;
+                font-weight: 600;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                border: 2px solid chocolate;
+                border-radius: 50px;
+                outline: none;
+                cursor: pointer;
+            }
+   
+            @media (max-width: 1200px) {
+                .container {
+                    height: 100%;
+                }
+   
+                .cards-wrapper {
+                    flex-wrap: wrap;
+                }
+   
+                .card {
+                    margin: 50px;
+                }
+            }
+   .bg-01 {
+            background: rgba(0, 0, 0, 0.459);
+            background-image: url('https://i.ibb.co/mv4xY2k/bg01.jpg');
+            background-repeat: repeat;
+        }
+
+       
+        .hero {
+            display: block;
+            position: relative;
+            color: whitesmoke;
+            background-color: #160351;
+            background-image: url('https://i.ibb.co/mv4xY2k/bg01.jpg');
+            border-radius: 15px;
+            align-content: center;
+            text-align: center;
+            height: 50%;
+            width: 100vw;
+            margin-top: 90px;
+        }
+
+        .news__title {
+            font-family: 'Amaranth', sans-serif;
+            line-height: 8rem;
+            font-size: 4rem;
+        }
+
+        .news__link::after {
+            content: "";
+            width: 130%;
+            height: 8remp;
+            position: relative;
+            top: 0;
+            left: 0;
+        }
+
+        .apa-name {
+            font-family: "Josefin Sans", sans-serif;
+            font-weight: 700;
+            color: #e70c8f;
+        }
+
+        .image {
+            display: inline-block;
+            position: relative;
+            max-width: 340px;
+            width: 70%;
+            max-height: 500px;
+            height: auto;
+            image-rendering: auto;
+        }
+
+        .herod {
+            background-image: linear-gradient(120deg, #ec008c, #fc6767 100%);
+            background-size: 100% 0.2em;
+            background-position: 0 90%;
+            transition: 0.25s ease-in;
+            margin-bottom: 3%;
+        }
+
+        .hero-d:hover {
+            background-size: 100% 88% !important;
+        }
+
+        @import url('https://fonts.googleapis.com/css?family=Amaranth:700,400&display=swap');
+        /* The component will reset browser's styles of link */
+
+        .r-link {
+            --uirLinkDisplay: var(--rLinkDisplay, inline-block);
+            --uirLinkTextColor: var(--rLinkTextColor);
+            --uirLinkTextDecoration: var(--rLinkTextDecoration, none);
+            display: var(--uirLinkDisplay) !important;
+            color: var(--uirLinkTextColor) !important;
+            text-decoration: var(--uirLinkTextDecoration) !important;
+        }
+        /* The component will reset browser's styles of titles */
+
+        .r-title {
+            --uirTitleMarginTop: var(--rTitleMarginTop, 0);
+            --uirTitleMarginBottom: var(--rTitleMarginBottom, 0);
+            margin-top: var(--uirTitleMarginTop) !important;
+            margin-bottom: var(--uirTitleMarginBottom) !important;
+        }
+        /*
+    =====
+    CORE STYLES
+    =====
+    */
+
+        .animated-underline {
+            --uiAnimatedUnderlineWidth: var(--animatedUnderlineWidth, 100%);
+            --uiAnimatedUnderlineHeight: var(--animatedUnderlineHeight, 2px);
+            --uiAnimatedUnderlineBgColor: var(--animatedUnderlineBgColor, currentColor);
+            --uiAnimatedUnderlinePositionX: var(--animatedUnderlinePositionX, left);
+            --uiAnimatedUnderlinePositionY: var(--animatedUnderlinePositionY, bottom);
+            /*
+            1. For multi-line animated underline the "inline" value for the display property is compulsory.
+            2. Adds opportunity to create multi-line padding
+        */
+            --rLinkDisplay: inline;
+            /* 1 */
+            background-image: linear-gradient(0, var(--uiAnimatedUnderlineBgColor) 0, var(--uiAnimatedUnderlineBgColor));
+            background-size: var(--uiAnimatedUnderlineWidth) var(--uiAnimatedUnderlineHeight);
+            background-position: var(--uiAnimatedUnderlinePositionX) var(--uiAnimatedUnderlinePositionY);
+            background-repeat: no-repeat;
+            -webkit-box-decoration-break: clone;
+            /* 2 */
+            box-decoration-break: clone;
+            /* 2 */
+            will-change: background-size;
+            transition: background-size .25s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+        }
+
+        :root {
+            --animatedUnderlineHeight: 1rem;
+            --animatedUnderlineBgColor: var(--accentColor);
+        }
+
+        .animated-underline_type1 {
+            --animatedUnderlineWidth: 100%;
+        }
+
+        .animated-underline_type1:hover {
+            --animatedUnderlineHeight: 100%;
+        }
+
+        .animated-underline_type2 {
+            --animatedUnderlineWidth: 100%;
+        }
+
+        .animated-underline_type2:hover {
+            --animatedUnderlineWidth: 0;
+        }
+
+        .animated-underline_type3 {
+            --animatedUnderlineHeight: 0;
+        }
+
+        .animated-underline_type3:hover {
+            --animatedUnderlineHeight: 100%;
+        }
+
+        .animated-underline_type4 {
+            --animatedUnderlineWidth: 0;
+        }
+
+        .animated-underline_type4:hover {
+            --animatedUnderlineWidth: 100%;
+        }
+
+        .animated-underline_type5 {
+            --animatedUnderlineWidth: 100%;
+            --animatedUnderlineHeight: 5px;
+            --animatedUnderlinePositionY: 90%;
+        }
+
+        .animated-underline_type5:hover {
+            --animatedUnderlineHeight: 1rem;
+        }
+        /*
+    =====
+    DEMO
+    =====
+    */
+
+        :root {
+            --mainColor: #673AB7;
+            --accentColor: #fc0c6c;
+            --accentColorDark: #f15493;
+            --blackColor: #222;
+            --whiteColor: #fff;
+            --rLinkTextColor: --whiteColor: #fff;
+        }
+
+        .page {
+            color: #fff;
+            width: 100vw;
+            margin: auto;
+            padding-top: 10%;
+            text-align: center;
+        }
+
+        .news__title {
+            font-color: color: #fff;
+            font-family: 'Amaranth', sans-serif;
+            line-height: 8rem;
+            font-size: 4rem;
+            font-weight: 700px;
+        }
+
+        .news__link::after {
+            content: "";
+            width: 130%;
+            height: 8rem;
+            position: relative;
+            top: 0;
+            left: 0;
+            color: #fff;
+        }
+
+        .main {
+            background-color: rgb(16, 24, 51);
+            margin-top: 3%
+        }
+        /*
+    // No media query necessary for xs breakpoint as it's effectively `@media (min-width: 0) { ... }`
+    @include media-breakpoint-up(sm) { ... }
+    @include media-breakpoint-up(md) { ... }
+    @include media-breakpoint-up(lg) { ... }
+    @include media-breakpoint-up(xl) { ... }
+    @include media-breakpoint-up(xxl) { ... }
+
+    // Usage
+
+    // Example: Hide starting at `min-width: 0`, and then show at the `sm` breakpoint
+    .custom-class {
+    display: none;
+    }
+    @include media-breakpoint-up(sm) {
+    .custom-class {
+      display: block;
+    }
+    }*/
+        /* -------------------------FOOTER---------------- */
+
+        @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500&display=swap');
+        .apaBrand-bottom {
+            display: block;
+            color: #E70C8F;
+            font-family: 'Josefin Sans', sans-serif;
+            font-weight: 700;
+            font-size: 2.7rem;
+        }
+
+        .bg-custom {
+            background-color: #bd0172;
+            width: 100vw;
+            heightt: 50px;
+            align-content: center;
+        }
+        body{
+            background: #eee;
+        }
+        span{
+            font-size:15px;
+        }
+        a{
+            text-decoration:none;
+            color: #0062cc;
+            border-bottom:2px solid #0062cc;
+        }
+        .box{
+            padding:60px 0px;
+        }
+
+        .box-part{
+            background:#FFF;
+            border-radius:0;
+            padding:60px 10px;
+            margin:30px 0px;
+        }
+        .text{
+            margin:20px 0px;
+        }
+
+        .fa{
+            color:#4183D7;
+        }
+    }
+
+    a:link{
+        link-style: none;
+        text-decoration: none;
+    }
+    </style>
+<link href="./stylesheets/style.css" type="tex/css"/>
+    <title>DEESTAQUES</title>
+</head>
+<body class="bodyPage">
+    <%- include('../partials/navbarTop.ejs'); %>
+    <div class="hero">
+        <div class="px-2 py-2 my-9 text-center">
+        </div>
+        <h3 class="r-title news__title">
+            <a href="#" class="r-link animated-underline animated-underline_type1 news__link">
+                APA!app
+            </a>
+        </h3>
+        <p class=" herod "> FACILIDAD, VENTAJAS y PLACER ahora en tu celu con APA! app!</p>
+        <div class=" col-12 py-20 mg-20 ">
+          
+            <script async src="//embedr.flickr.com/assets/client-code.js " charset="utf-8 "></script>
+        </div>
+    </div>
+    <div class="box">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+
+                    <div class="box-part text-center">
+
+                        <i class="fa fa-instagram fa-3x" aria-hidden="true"></i>
+
+                        <div class="title">
+                            <h4>PUNTUACIONES</h4>
+                        </div>
+                        <div class="text">
+                            <span>Para buscar los <strong>PUNTUACIONES y EVALUACIONES</strong> entre AL CLUB!</span>
+                        </div>
+
+                        <a href="/usuarios/nuevos-socios"><strong>CADASTRO GRATIS</strong></a>
+
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+
+                    <div class="box-part text-center">
+
+                        <i class="fa fa-twitter fa-3x" aria-hidden="true"></i>
+
+                        <div class="title">
+                            <h4>Twitter</h4>
+                        </div>
+
+                        <div class="text">
+                            <span>Para buscar los <strong>OTRAS CATEGORIAS</strong> entre AL CLUB!</span>
+                            <strong class="resultsSearch">Abajo algunos DESTAQUES</strong>
+                        </div>
+
+                        <a href="/CABA"><strong>VEA + TELOS - CABA</strong></a>
+
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+
+                    <div class="box-part text-center">
+
+                        <i class="fa fa-facebook fa-3x" aria-hidden="true"></i>
+
+                        <div class="title">
+                            <h4>MENORES PRECIOS</h4>
+                        </div>
+
+                        <div class="text">
+                            <span>Para buscar los <strong> MENORES PRECIOS</strong> entre AL CLUB!</span>
+                        </div>
+
+                        <a href="/usuarios/nuevos-socios"><strong>CADASTRO GRATIS</strong></a>
+
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+
+                    <div class="box-part text-center">
+
+                        <i class="fa fa-pinterest-p fa-3x" aria-hidden="true"></i>
+
+                        <div class="title">
+                            <h4>Pinterest</h4>
+                        </div>
+
+                        <div class="text">
+                            <span>Lorem ipsum dolor sit amet, id quo eruditi eloquentiam. Assum decore te sed. Elitr scripta ocurreret qui ad.</span>
+                        </div>
+
+                        <a href="#">Learn More</a>
+
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+
+                    <div class="box-part text-center">
+
+                        <i class="fa fa-google-plus fa-3x" aria-hidden="true"></i>
+
+                        <div class="title">
+                            <h4>Google</h4>
+                        </div>
+
+                        <div class="text">
+                            <span>Lorem ipsum dolor sit amet, id quo eruditi eloquentiam. Assum decore te sed. Elitr scripta ocurreret qui ad.</span>
+                        </div>
+
+                        <a href="#">Learn More</a>
+
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+
+                    <div class="box-part text-center">
+
+                        <i class="fa fa-github fa-3x" aria-hidden="true"></i>
+
+                        <div class="title">
+                            <h4>Github</h4>
+                        </div>
+
+                        <div class="text">
+                            <span>Lorem ipsum dolor sit amet, id quo eruditi eloquentiam. Assum decore te sed. Elitr scripta ocurreret qui ad.</span>
+                        </div>
+
+                        <a href="#">Learn More</a>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <%-include('./../partials/footer.ejs')%>
+    <%- include('./../partials/navbarBottom.ejs'); %>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

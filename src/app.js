@@ -1,7 +1,7 @@
 /***********settings****** */
 
-const PORT = 3030;
-const port = process.env.PORT || 3030;
+const PORT = 3077;
+const port = process.env.PORT || 3077;
 const express = require('express');
 const path = require('path');
 //const extType = path.extname('file');
@@ -31,7 +31,7 @@ app.use(express.urlencoded({ extended: false }));
 const mainRouters = require('./routes/mainRoutes.js');
 const apaClubRouter = require('./routes/apaClubRoutes.js');
 const usersRouter = require('./routes/usersRoutes.js');
-//const productsRouter = require('./routes/productsRoutes.js');
+const productsRouter = require('./routes/productsRoutes.js');
 const enterpriseRouter = require('./routes/enterpriseRoutes.js');
 const apiOwnerRouter = require('./routes/apiOwnerRoutes.js');
 //const searchRouter = require('./routes/searchRoutes.js');
@@ -41,7 +41,7 @@ const staffRouter = require('./routes/staffRoutes.js');
 app.use('/', mainRouters);
 app.use('/apa-club', apaClubRouter);
 app.use('/usuarios', usersRouter);
-//app.use('/telos', productsRouter);
+app.use('/telos', productsRouter);
 app.use('/empresas', enterpriseRouter);
 app.use('/ApaOwners', apiOwnerRouter);
 //app.use('/buscarTelos', searchRouter);

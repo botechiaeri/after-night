@@ -1072,7 +1072,7 @@
     "cL": "48641650",
     "wL": "http://www.hoteldallas.com.ar/",
     "roomsL": ["Spa Dallas", "Loft Dallas", "Spa Mirador", "Iglu", "Eros", "Titanic", "Suite Caño", "Retro", "Suite Espejo", "Especial", "Suite con sillon erotico", "Suite Mediebal", "Caligula", "Suite Cochera Privada"],
-    "dL": "Telo en Barrio Almagro"
+    "dL": "Telo en Barrio Almagro",
     "sL": "Puntuado como 5 estrellas en varias Fuentes por Usuarios",
     "priceL": ["2300 a 6700"],
     "tyP": ["Turno 8 horas - Lunes a Viernes (In greso 6am - Termino 14pm", "Turno 3 HORAS - Domingo a Jueves", "Turno 2 horas, viernes y sabados a partir de las 00:00"],
@@ -1094,9 +1094,9 @@
 {
     "comunaID": 3,
     "nameL": "Bariloche",
-    "rgL": "rgL0023"
+    "rgL": "rgL0023",
     "aL": "Carlos Calvo 3290",
-    "cL": "4932-5056"
+    "cL": "4932-5056",
     "wL": "http://telodescuentos.com/bariloche-4932-5056-capital-federal/",
     "roomsL": ["Bariloche", "Especial", "Suite", "Hidromasaje", "Normal"],
     "dL": "Telo en Barrio Almagro"
